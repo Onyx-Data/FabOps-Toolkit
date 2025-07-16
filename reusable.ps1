@@ -66,7 +66,7 @@ function Set-NotebookAndWorkspaceIdsInJson {
     }
 
     # Read and convert JSON to object
-    $jsonContent = Get-Content $JsonPath -Raw | ConvertFrom-Json
+    $jsonContent = Get-Content $JsonPath -Raw | ConvertFrom-Json -Depth 50
 
     # Find and update all relevant notebookId/workspaceId entries
     foreach ($activity in $jsonContent.properties.activities) {
@@ -81,7 +81,7 @@ function Set-NotebookAndWorkspaceIdsInJson {
     }
 
     # Serialize and save
-    $newJson = $jsonContent | ConvertTo-Json -Depth 10
+    $newJson = $jsonContent | ConvertTo-Json -Depth 50
 
     if (-not $OutputPath) {
         $OutputPath = $JsonPath  # Overwrite original
@@ -553,6 +553,52 @@ function Convert-PBIRByPathToByConnection {
         ($pbirJson | ConvertTo-Json -Depth 10),
         $utf8NoBomEncoding
     )
+}
+
+function Get-FabricLakehouseUrl {
+    param (
+        [Parameter(Mandatory = $true)]
+        [string]$WorkspaceId,
+
+        [Parameter(Mandatory = $true)]
+        [string]$LakehouseId
+    )
+
+    try {
+        $Response = fab api "workspaces/$WorkspaceId/lakehouses/$LakehouseId" 
+
+       #Write-Host "API Result: $Response"
+
+        $apiResponse= $Response | ConvertFrom-Json -Depth 10
+
+        #Write-Host "API Response JSON: $apiResponse"
+
+        $url = $apiResponse.text.properties.sqlEndpointProperties.connectionString
+
+        if (-not $url) {
+            throw "Lakehouse connection URL not found in API response."
+        }
+
+        return $url
+    }
+    catch {
+        throw "Failed to retrieve Lakehouse URL: $_"
+    }
+}
+
+function Update-TmdlExpressionsFile {
+    param (
+        [string]$FilePath,
+        [string]$NewLakehouseUrl,
+        [string]$NewLakehouseName
+    )
+
+    $content = Get-Content $FilePath -Raw
+
+    $content = $content -replace '(?<=expression Lakehouse_URL = ")[^"]+(?=")', $NewLakehouseUrl
+    $content = $content -replace '(?<=expression Lakehouse_Name = ")[^"]+(?=")', $NewLakehouseName
+
+    Set-Content -Path $FilePath -Value $content -Encoding UTF8
 }
 
 

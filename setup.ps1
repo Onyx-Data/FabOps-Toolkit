@@ -90,6 +90,9 @@ fab auth login
 
 . .\reusable.ps1
 
+$lakehouseId=$null
+$workspaceId=$null
+
 #Identifying the capacity
 $capacityname=Get-CapacityName
 
@@ -217,6 +220,19 @@ if (-not (Check-PipelineExists -WorkspaceName "/OnyxTools.Workspace" -PipelineNa
 }
 
 if (-not (Check-SemanticModelExists -WorkspaceName "/OnyxTools.Workspace" -SemanticModelName "Lakehouse Maintenance Report")) {
+
+    if (-not ($lakehouseId))
+    {
+        $lakehouseId=Get-LakehouseId -workspaceName "OnyxToolsMeta" -lakehouseName "OnyxToolsLake"    
+    }
+    if (-not ($workspaceId))
+    {
+        $workspaceId=Get-WorkspaceId -workspaceName "OnyxToolsMeta"
+    }
+
+    $url=Get-FabricLakehouseUrl -WorkspaceId $workspaceId -LakehouseId $lakehouseId
+
+    Update-TmdlExpressionsFile -FilePath "$PSScriptRoot\Lakehouse Maintenance Report.SemanticModel\definition\expressions.tmdl" -NewLakehouseUrl $url  -NewLakehouseName "OnyxToolsLake"
 
     fab import "/OnyxTools.Workspace/Lakehouse Maintenance Report.SemanticModel" -i "$PSScriptRoot/Lakehouse Maintenance Report.SemanticModel" -f
 
