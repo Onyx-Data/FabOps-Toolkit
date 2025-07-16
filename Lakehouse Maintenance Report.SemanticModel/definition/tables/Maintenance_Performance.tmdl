@@ -1,0 +1,109 @@
+table Maintenance_Performance
+	lineageTag: 6e4af133-1acd-4c0b-b960-2d30d0e67182
+
+	measure Metricc = SUM(Maintenance_Performance[Metric])
+		lineageTag: 2987cda2-fe6c-46b0-aaac-7c83ceeeee01
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure Rank = RANK(DENSE,Maintenance_Performance, ORDERBY(Maintenance_Performance[Metric], DESC),PARTITIONBY(Maintenance_Performance[distributed_statement_id]))
+		formatString: 0
+		lineageTag: 7256c748-9dcd-434f-bfd8-4e70426ccaf6
+
+	measure Rank1 = RANK(DENSE,ORDERBY(Maintenance_Performance[Metric],DESC))
+		formatString: 0
+		lineageTag: 7f3eb3e6-1b20-41de-82ad-cf9c7595ee82
+
+	measure RowNum =
+			
+			ROWNUMBER(Maintenance_Performance, ORDERBY(Maintenance_Performance[Metric], DESC))
+		formatString: 0
+		lineageTag: 8a540ae5-426b-4b4f-a1e9-703e0735cfda
+
+	column MaintenanceDate
+		dataType: dateTime
+		formatString: dd/mm/yyyy
+		lineageTag: 825db75f-6232-46c9-9cc6-b368ca0e1bd5
+		summarizeBy: none
+		sourceColumn: MaintenanceDate
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+		annotation PBI_FormatHint = {"isDateTimeCustom":true}
+
+	column Metric
+		dataType: double
+		lineageTag: fc57604b-532f-4219-9bba-f34a512fb253
+		summarizeBy: sum
+		sourceColumn: Metric
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column PerformanceType
+		dataType: string
+		lineageTag: 675fbfe7-1c08-46de-8631-9204b1d92364
+		summarizeBy: none
+		sourceColumn: PerformanceType
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Query Position'
+		dataType: int64
+		formatString: 0
+		lineageTag: 81ca5ea7-e546-4d1e-8d08-45d1445733b8
+		summarizeBy: sum
+		sourceColumn: Query Position
+
+		annotation SummarizationSetBy = Automatic
+
+	column Dataset_Name
+		dataType: string
+		lineageTag: 44234576-3b74-4e35-85f0-d68143f49ee8
+		summarizeBy: none
+		sourceColumn: Dataset_Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column Report_Name
+		dataType: string
+		lineageTag: aeaa517f-7fbf-4763-a1f0-ba5795801a96
+		summarizeBy: none
+		sourceColumn: Report_Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column Report_Workspace
+		dataType: string
+		lineageTag: caee37de-a1c8-497a-8e68-45f4c33744d9
+		summarizeBy: none
+		sourceColumn: Report_Workspace
+
+		annotation SummarizationSetBy = Automatic
+
+	column distributed_statement_id
+		dataType: string
+		lineageTag: cac70e7e-47e2-4c83-9729-d9bf800ef4a3
+		summarizeBy: none
+		sourceColumn: distributed_statement_id
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Maintenance_Performance = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Database(Lakehouse_URL, Lakehouse_Name, [Query="select  [distributed_statement_id], MaintenanceDate, data_scanned_memory_mb as Metric, PerformanceType,[Dataset_Name],[Report_Name],[Report_Workspace],#(lf)ROW_NUMBER() OVER (PARTITION BY MaintenanceDate,[Dataset_Name],[Report_Name],[Report_Workspace] ORDER BY data_scanned_memory_mb DESC) as RowNum#(lf) from Maintenance_Performance where PerformanceType = 'ScannedMemory'#(lf)UNION#(lf)select [distributed_statement_id], MaintenanceDate, data_scanned_remote_storage_mb as Metric, PerformanceType,[Dataset_Name],[Report_Name],[Report_Workspace],#(lf)ROW_NUMBER() OVER (PARTITION BY MaintenanceDate,[Dataset_Name],[Report_Name],[Report_Workspace] ORDER BY data_scanned_remote_storage_mb DESC) as RowNum#(lf) from Maintenance_Performance where PerformanceType = 'RemoteStorage'#(lf)UNION#(lf)select [distributed_statement_id], MaintenanceDate, allocated_cpu_time_ms as Metric, PerformanceType,[Dataset_Name],[Report_Name],[Report_Workspace],#(lf)ROW_NUMBER() OVER (PARTITION BY MaintenanceDate,[Dataset_Name],[Report_Name],[Report_Workspace] ORDER BY allocated_cpu_time_ms DESC) as RowNum#(lf) from Maintenance_Performance where PerformanceType = 'Allocated CPU'#(lf)UNION#(lf)select [distributed_statement_id], MaintenanceDate, row_count as Metric, PerformanceType,[Dataset_Name],[Report_Name],[Report_Workspace],#(lf)ROW_NUMBER() OVER (PARTITION BY MaintenanceDate,[Dataset_Name],[Report_Name],[Report_Workspace] ORDER BY row_count DESC) as RowNum#(lf) from Maintenance_Performance where PerformanceType = 'RowCount'#(lf)UNION#(lf)select [distributed_statement_id], MaintenanceDate, total_elapsed_time_ms as Metric, PerformanceType,[Dataset_Name],[Report_Name],[Report_Workspace],#(lf)ROW_NUMBER() OVER (PARTITION BY MaintenanceDate,[Dataset_Name],[Report_Name],[Report_Workspace] ORDER BY total_elapsed_time_ms DESC) as RowNum#(lf) from Maintenance_Performance where PerformanceType = 'EllapsedTime'"]),
+				    #"Changed Type" = Table.TransformColumnTypes(Source,{{"MaintenanceDate", type date}}),
+				    #"Renamed Columns" = Table.RenameColumns(#"Changed Type",{{"RowNum", "Query Position"}}),
+				    #"Replaced Value" = Table.ReplaceValue(#"Renamed Columns","EllapsedTime","ElapsedTime",Replacer.ReplaceText,{"PerformanceType"})
+				in
+				    #"Replaced Value"
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navigation
+

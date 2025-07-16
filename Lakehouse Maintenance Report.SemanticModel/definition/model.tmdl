@@ -1,0 +1,24 @@
+model Model
+	culture: en-US
+	defaultPowerBIDataSourceVersion: powerBI_V3
+	sourceQueryCulture: en-GB
+	dataAccessOptions
+		legacyRedirects
+		returnErrorValuesAsNull
+
+annotation __PBI_TimeIntelligenceEnabled = 0
+
+annotation PBIDesktopVersion = 2.145.1105.0 (25.07)+decbc46fce458c5b8d5109d6f32a743f2ac949c8
+
+annotation PBI_QueryOrder = ["Maintenance_tablesSize","Key Measures","Maintenance_Performance","Lakehouse_URL","Lakehouse_Name"]
+
+annotation PBI_ProTooling = ["DevMode"]
+
+ref table Maintenance_tablesSize
+ref table 'Key Measures'
+ref table AggregationOptions
+ref table 'Date Table'
+ref table Maintenance_Performance
+
+ref cultureInfo en-US
+

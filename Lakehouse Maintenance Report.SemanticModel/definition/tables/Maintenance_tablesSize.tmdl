@@ -1,0 +1,89 @@
+table Maintenance_tablesSize
+	lineageTag: 7361cc2c-932a-4824-90ce-649783d65274
+
+	column num_files
+		dataType: int64
+		formatString: 0
+		lineageTag: 50009773-5cb7-4c19-8574-bd09c0fd40db
+		summarizeBy: sum
+		sourceColumn: num_files
+
+		annotation SummarizationSetBy = Automatic
+
+	column partition
+		dataType: string
+		lineageTag: c9b424f7-df94-497b-8ec3-7bca3657f566
+		summarizeBy: none
+		sourceColumn: partition
+
+		annotation SummarizationSetBy = Automatic
+
+	column partition_level
+		dataType: string
+		lineageTag: 7c6727af-9e7d-46be-ab9e-8abb991a2296
+		summarizeBy: none
+		sourceColumn: partition_level
+
+		annotation SummarizationSetBy = Automatic
+
+	column table
+		dataType: string
+		lineageTag: e04d65b8-89e4-4da1-b4cf-48513e99cc05
+		summarizeBy: none
+		sourceColumn: table
+
+		annotation SummarizationSetBy = Automatic
+
+	column MaintenanceDate
+		dataType: dateTime
+		formatString: dd/mm/yyyy
+		lineageTag: c1155a69-e5e0-46fa-b90c-52606a580253
+		summarizeBy: none
+		sourceColumn: MaintenanceDate
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+		annotation PBI_FormatHint = {"isDateTimeCustom":true}
+
+	column MaintenanceTime
+		dataType: string
+		lineageTag: 9e845c02-bbd8-49c3-94db-b8b3b9330218
+		summarizeBy: none
+		sourceColumn: MaintenanceTime
+
+		annotation SummarizationSetBy = Automatic
+
+	column Evolution
+		dataType: string
+		lineageTag: 059b102b-e6a4-4a40-99a1-05fa60e3789c
+		summarizeBy: none
+		sourceColumn: Evolution
+		sortByColumn: MaintenanceDate
+
+		changedProperty = SortByColumn
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Maintenance_tablesSize = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Database(Lakehouse_URL, Lakehouse_Name),
+				    dbo_Maintenance_tablesSize = Source{[Schema="dbo",Item="Maintenance_tablesSize"]}[Data],
+				    #"Duplicated Column1" = Table.DuplicateColumn(dbo_Maintenance_tablesSize, "MaintenanceTime", "MaintenanceTime - Copy"),
+				    #"Renamed Columns" = Table.RenameColumns(#"Duplicated Column1",{{"MaintenanceTime - Copy", "Evolution"}}),
+				    #"Replaced Value" = Table.ReplaceValue(#"Renamed Columns","Before","01-Before",Replacer.ReplaceText,{"Evolution"}),
+				    #"Replaced Value1" = Table.ReplaceValue(#"Replaced Value","After","02-After",Replacer.ReplaceText,{"Evolution"}),
+				    #"Filtered Rows" = Table.SelectRows(#"Replaced Value1", each ([partition] = "TOTAL" or [partition] = "_delta_log")),
+				    #"Duplicated Column" = Table.DuplicateColumn(#"Filtered Rows", "MaintenanceDate", "MaintenanceDate - Copy"),
+				    #"Merged Columns" = Table.CombineColumns(Table.TransformColumnTypes(#"Duplicated Column", {{"MaintenanceDate - Copy", type text}}, "en-GB"),{"Evolution", "MaintenanceDate - Copy"},Combiner.CombineTextByDelimiter("-", QuoteStyle.None),"Evolution.1"),
+				    #"Renamed Columns1" = Table.RenameColumns(#"Merged Columns",{{"Evolution.1", "Evolution"}})
+				in
+				    #"Renamed Columns1"
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navigation
+

@@ -1,0 +1,8 @@
+relationship a926ebcf-18d1-082b-fd3d-e342ed20eb21
+	fromColumn: Maintenance_Performance.MaintenanceDate
+	toColumn: 'Date Table'.Date
+
+relationship dbeabe26-f907-740d-530e-6fe5c2db78c4
+	fromColumn: Maintenance_tablesSize.MaintenanceDate
+	toColumn: 'Date Table'.Date
+

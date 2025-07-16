@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "SemanticModel",
+    "displayName": "Lakehouse Maintenance Report"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "7fa8d2af-c550-98ed-49a7-377ce42998a6"
+  }
+}

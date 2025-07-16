@@ -1,0 +1,179 @@
+table 'Key Measures'
+	lineageTag: 97924ede-5dd7-494b-8f93-c6ef64c16df3
+
+	measure Num_of_Files = ```
+			
+			    SWITCH(
+			    SELECTEDVALUE(AggregationOptions[Value]),
+			    "SUM", SUM(Maintenance_tablesSize[num_files]),
+			    "AVG", AVERAGE(Maintenance_tablesSize[num_files]),
+			    "MIN", MIN(Maintenance_tablesSize[num_files]),
+			    "MAX", MAX(Maintenance_tablesSize[num_files]),
+			    BLANK()  -- Default if no option is selected
+			)
+			```
+		formatString: #,0
+		displayFolder: TableSize
+		lineageTag: bcbc82b8-799b-4c18-be9a-bb689432d17e
+
+		annotation PBI_FormatHint = {"isDecimal":true}
+
+	measure 'Current Week' = ```
+			
+			    CALCULATE(
+			        SUM('Maintenance_Performance'[Metric]), 
+			        FILTER('Maintenance_Performance', 'Maintenance_Performance'[MaintenanceDate]  = MAX('Maintenance_Performance'[MaintenanceDate])))
+			```
+		formatString: #,0.000
+		displayFolder: Performance
+		lineageTag: 806f8dbf-b936-4ad8-9861-f7bf6d3f0ee4
+
+	measure 'After.' =
+			SWITCH(
+			    SELECTEDVALUE(AggregationOptions[Value]),
+			    "SUM", SUM('Maintenance_Performance'[Metric]),
+			    "AVG", AVERAGE('Maintenance_Performance'[Metric]),
+			    "MIN", MIN('Maintenance_Performance'[Metric]),
+			    "MAX", MAX('Maintenance_Performance'[Metric]),
+			    BLANK()  -- Default if no option is selected
+			)
+		displayFolder: Performance
+		lineageTag: ca53cc35-79a0-44ab-b679-689e02a6c727
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Previous Week' = ```
+			
+			VAR CurrentDate = MAX('Maintenance_Performance'[MaintenanceDate])
+			VAR PreviousDate =
+			    MAXX(
+			        TOPN(
+			            1,
+			            FILTER(
+			                ALL('Maintenance_Performance'[MaintenanceDate]),
+			                'Maintenance_Performance'[MaintenanceDate] < CurrentDate
+			            ),
+			            'Maintenance_Performance'[MaintenanceDate],
+			            DESC
+			        ),
+			        'Maintenance_Performance'[MaintenanceDate]
+			    )
+			RETURN
+			IF(
+			    NOT ISBLANK(PreviousDate),
+			    CALCULATE(
+			        SUM('Maintenance_Performance'[Metric]),
+			        'Maintenance_Performance'[MaintenanceDate] = PreviousDate
+			    )
+			)
+			
+			```
+		formatString: #,0.000
+		displayFolder: Performance
+		lineageTag: ac771cfc-cc8d-4e7f-be06-853ce55817a8
+
+	measure 'Before.' =
+			SWITCH(
+			    SELECTEDVALUE(AggregationOptions[Value]),
+			    "SUM", CALCULATE(SUM('Maintenance_Performance'[Metric]), 'Maintenance_Performance'[MaintenanceDate] < MAX('Maintenance_Performance'[MaintenanceDate])),
+			    "AVG", CALCULATE(AVERAGE('Maintenance_Performance'[Metric]), 'Maintenance_Performance'[MaintenanceDate] < MAX('Maintenance_Performance'[MaintenanceDate])),
+			    "MIN", CALCULATE(MIN('Maintenance_Performance'[Metric]), 'Maintenance_Performance'[MaintenanceDate] < MAX('Maintenance_Performance'[MaintenanceDate])),
+			    "MAX", CALCULATE(MAX('Maintenance_Performance'[Metric]), 'Maintenance_Performance'[MaintenanceDate] < MAX('Maintenance_Performance'[MaintenanceDate])),
+			    BLANK()  -- Default if no option is selected
+			)
+		displayFolder: Performance
+		lineageTag: 59eb9358-5604-419d-bc8d-da4301a0cce6
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure Difference = [Previous Week] - [Current Week]
+		formatString: #,0.00
+		displayFolder: Performance
+		lineageTag: 01c7d2ed-17fd-4e8b-b067-28c670886dd8
+
+	measure 'Sign (+-)' = ```
+			
+			    SWITCH(
+			        TRUE(),
+			        [Current Week] > [Previous Week], UNICHAR(9650),
+			        UNICHAR(9660) )
+			```
+		displayFolder: Performance
+		lineageTag: b8813859-e230-4d59-a3d3-ce6614b63c9f
+
+	measure 'Sign Colour' = ```
+			
+			  SWITCH(
+			        TRUE(),
+			        [Current Week] < [Previous Week], "#22bc22","#FF0000" )
+			```
+		displayFolder: Performance
+		lineageTag: 3b8d7473-2851-4951-9aa6-4a6a5f746749
+
+	measure Num_of_Files_Before = ```
+			
+			    SWITCH(
+			    SELECTEDVALUE(AggregationOptions[Value]),
+			    "SUM", CALCULATE(SUM(Maintenance_tablesSize[num_files]), Maintenance_tablesSize[MaintenanceTime] = "Before"),
+			    "AVG", CALCULATE(AVERAGE(Maintenance_tablesSize[num_files]), Maintenance_tablesSize[MaintenanceTime] = "Before"),
+			    "MIN", CALCULATE(MIN(Maintenance_tablesSize[num_files]), Maintenance_tablesSize[MaintenanceTime] = "Before"),
+			    "MAX", CALCULATE(MAX(Maintenance_tablesSize[num_files]), Maintenance_tablesSize[MaintenanceTime] = "Before"),
+			    BLANK()  -- Default if no option is selected
+			)
+			```
+		displayFolder: TableSize
+		lineageTag: 1b5895b2-e3c1-46b1-b1de-7e52bb15812a
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure Num_of_Files_After = ```
+			
+			    SWITCH(
+			    SELECTEDVALUE(AggregationOptions[Value]),
+			    "SUM", CALCULATE(SUM(Maintenance_tablesSize[num_files]), Maintenance_tablesSize[MaintenanceTime] = "After"),
+			    "AVG", CALCULATE(AVERAGE(Maintenance_tablesSize[num_files]), Maintenance_tablesSize[MaintenanceTime] = "After"),
+			    "MIN", CALCULATE(MIN(Maintenance_tablesSize[num_files]), Maintenance_tablesSize[MaintenanceTime] = "After"),
+			    "MAX", CALCULATE(MAX(Maintenance_tablesSize[num_files]), Maintenance_tablesSize[MaintenanceTime] = "After"),
+			    BLANK()  -- Default if no option is selected
+			)
+			```
+		displayFolder: TableSize
+		lineageTag: e4ad1ecb-927b-4c05-ae8c-dea4771387e7
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'No Of Files' = sum(Maintenance_tablesSize[num_files])
+		formatString: #,0
+		displayFolder: TableSize
+		lineageTag: 1f317e88-2b03-43d7-b86e-f79576a5f888
+
+	measure 'Performance Metric' =
+			SWITCH(
+			    SELECTEDVALUE(AggregationOptions[Value]),
+			    "SUM", SUM('Maintenance_Performance'[Metric]),
+			    "AVG", AVERAGE('Maintenance_Performance'[Metric]),
+			    "MIN", MIN('Maintenance_Performance'[Metric]),
+			    "MAX", MAX('Maintenance_Performance'[Metric]),
+			    BLANK()  -- Default if no option is selected
+			)
+		formatString: #,0.00
+		displayFolder: Performance
+		lineageTag: 209fb40e-22ba-40c7-9379-627ef6559bda
+
+	measure 'Title of Performance' =
+			
+			MAX(AggregationOptions[Value])&" of Performance Metric by MaintenanceDate - "&MAX(Maintenance_Performance[PerformanceType])
+		lineageTag: 86c7612f-1808-4d6e-80e9-5de897799bc0
+
+	partition 'Key Measures' = m
+		mode: import
+		source =
+				let
+				    Source = Table.FromRows(Json.Document(Binary.Decompress(Binary.FromText("i44FAA==", BinaryEncoding.Base64), Compression.Deflate)), let _t = ((type nullable text) meta [Serialized.Text = true]) in type table [Column1 = _t]),
+				    #"Changed Type" = Table.TransformColumnTypes(Source,{{"Column1", type text}}),
+				    #"Removed Columns" = Table.RemoveColumns(#"Changed Type",{"Column1"})
+				in
+				    #"Removed Columns"
+
+	annotation PBI_ResultType = Table
+

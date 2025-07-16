@@ -1,0 +1,60 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/page/2.0.0/schema.json",
+  "name": "be3e50fc1db206a850b9",
+  "displayName": "Performance Deep Dive",
+  "displayOption": "FitToPage",
+  "height": 900,
+  "width": 1600,
+  "objects": {
+    "background": [
+      {
+        "properties": {
+          "color": {
+            "solid": {
+              "color": {
+                "expr": {
+                  "ThemeDataColor": {
+                    "ColorId": 1,
+                    "Percent": 0
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    ]
+  },
+  "visualInteractions": [
+    {
+      "source": "1823cb2ad834090012e0",
+      "target": "1ca4b82077c30d046aa8",
+      "type": "NoFilter"
+    },
+    {
+      "source": "1ca4b82077c30d046aa8",
+      "target": "1823cb2ad834090012e0",
+      "type": "NoFilter"
+    },
+    {
+      "source": "1823cb2ad834090012e0",
+      "target": "3a7dcdcf011e82660079",
+      "type": "NoFilter"
+    },
+    {
+      "source": "1ca4b82077c30d046aa8",
+      "target": "e3c5745562181902e400",
+      "type": "NoFilter"
+    },
+    {
+      "source": "1823cb2ad834090012e0",
+      "target": "84bd29f750b9ead477a5",
+      "type": "NoFilter"
+    },
+    {
+      "source": "1ca4b82077c30d046aa8",
+      "target": "84bd29f750b9ead477a5",
+      "type": "NoFilter"
+    }
+  ]
+}

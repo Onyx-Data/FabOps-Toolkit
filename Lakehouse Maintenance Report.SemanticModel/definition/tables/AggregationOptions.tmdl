@@ -1,0 +1,20 @@
+table AggregationOptions
+	lineageTag: 8c159ec9-b5fb-44d4-addc-71ff644b0e73
+
+	column Value
+		lineageTag: bcd30e2c-57c0-47fa-9e7e-92c0d7dcf102
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Value]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition AggregationOptions = calculated
+		mode: import
+		source = ```
+				{"MIN", "MAX", "SUM", "AVG"}
+				
+				```
+
+	annotation PBI_Id = 0bbf4315c54a4316930809a031b21771
+
