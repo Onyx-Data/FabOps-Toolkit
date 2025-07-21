@@ -1,13 +1,33 @@
-# FabOps-Toolkit
-A Toolkit with multiple tools to manage Microsoft Fabric
+# Microsoft Fabric Open Source Tools
 
+This repository contains a collection of open-source tools designed to enhance the operational efficiency, reliability, and manageability of your Microsoft Fabric environment.
 
-[Notebook Disabled Monitoring System](Documentation/Solution-Overview/Productionalized-Items/How-to-Set-Up-Documentation/Notebook-Disabled-Monitoring-Tool.md)
+Each tool addresses a specific need or gap encountered when using Fabric Lakehouses, SQL Endpoints, Notebooks, and ingestion processes.
 
-[SQL Endpoint Refresh Tool](Documentation/Solution-Overview/Productionalized-Items/How-to-Set-Up-Documentation/SQL-Endpoint-Refresh-Tool.md)
+## Tools Overview
 
-[Save JSON Tool](Documentation/Solution-Overview/Productionalized-Items/How-to-Set-Up-Documentation/Save-JSON-tool.md)
+### 🔧 Lakehouse Maintenance Tool
+Performs essential delta table maintenance operations such as file compaction and cleanup. Tracks top query performance and table statistics during each run to monitor lakehouse health over time.
 
-[SCD Type 2 Tool](Documentation/Solution-Overview/Productionalized-Items/How-to-Set-Up-Documentation/SCD-type-2-Tool.md)
+### 🚨 Disabled Notebook Alert
+Detects and alerts when a notebook schedule has been silently disabled after repeated failures. Helps prevent unnoticed stoppages in critical pipelines.
 
-[Shortcut Identification System](Documentation/Solution-Overview/Productionalized-Items/How-to-Set-Up-Documentation/Shortcut-Identification-System.md)
+### 🔄 SQL Endpoint Refresh Tool
+Refreshes SQL Endpoints post-data ingestion to ensure metadata consistency and avoid query issues related to recent changes in lakehouse content.
+
+### 🧱 SCD Type 2 Tool
+Implements Slowly Changing Dimensions Type 2 logic with minimal configuration. Automatically handles insertions, updates, and historicization for dimension records.
+
+### 🧭 Shortcut Identification Tool
+Identifies and flags shortcuts in a lakehouse to exclude them from maintenance operations and avoid redundant processing.
+
+### 📥 Save JSON Tool
+Captures and stores raw JSON data during ingestion processes, providing a verifiable snapshot of the original input—especially important when working with APIs.
+
+## Documentation
+
+See the `docs/` folder for detailed explanation of when and why each tool is used.
+
+---
+
+Contributions, issues, and feedback are welcome!
