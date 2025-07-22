@@ -43,3 +43,7 @@ Even if no schema change occurs, a **refresh should still be triggered** to upda
 If you are experiencing issues with SQL Endpoint freshness due to high file counts in the lakehouse, consider also using the [Lakehouse Maintenance Tool](./lakehouse-maintenance.md) to reduce file fragmentation and improve SQL Endpoint responsiveness.
 
 ---
+
+## References
+
+- [SQL Endpoint Secrets you need to know](https://www.red-gate.com/simple-talk/blogs/sql-endpoint-secrets-you-need-to-know/)
