@@ -4,6 +4,8 @@ This repository contains a collection of open-source tools designed to enhance t
 
 Each tool addresses a specific need or gap encountered when using Fabric Lakehouses, SQL Endpoints, Notebooks, and ingestion processes.
 
+How to setup the Tools : [Setup](docs/setup.md)
+
 ## Tools Overview
 
 ### 🔧 Lakehouse Maintenance Tool
