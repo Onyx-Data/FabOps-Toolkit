@@ -55,7 +55,7 @@ function Set-DefaultLakehouse()
     $lakehouseId=Get-LakehouseId -workspaceName "OnyxToolsMeta" -lakehouseName "OnyxToolsLake"
 
     Set-DefaultLakehouseInNotebook `
-        -NotebookPath "$PSScriptRoot\MetaInitialize.Notebook\notebook-content.ipynb" `
+        -NotebookPath "$PSScriptRoot\NB - Initial Table Creation.Notebook\notebook-content.ipynb" `
         -LakehouseId "$lakehouseId" `
         -LakehouseName "OnyxToolsLake" `
         -LakehouseWorkspaceId "$workspaceId"
@@ -95,11 +95,21 @@ $workspaceId=$null
 
 #Identifying the capacity
 $capacityname=Get-CapacityName
+if (-not $capacityname)
+{
+    exit 1
+}
 
 #Creating Meta workspace and lakehouse
 if (-not (Check-FabricWorkspaceExists -WorkspaceName "OnyxToolsMeta")) {
     Write-Host "Workspace OnyxToolsMeta doesn't exist. Creating"
-    Create-WorkspaceAndLake -capacityName $capacityname
+    try {
+         Create-WorkspaceAndLake -capacityName $capacityname
+    }
+    catch {
+        Write-Host "Error creating the workspace: $_"
+        exit 1
+    }
 }
 else
 {
@@ -117,9 +127,9 @@ else
 }
 
 #Creating tables in the meta lakehouse
-if (-not (Check-FabricNotebookExists -WorkspaceName "OnyxToolsMeta" -NotebookName "MetaInitialize")) {
-    fab import "/OnyxToolsMeta.Workspace/MetaInitialize.Notebook" -i ".\MetaInitialize.Notebook" -f
-    fab job run "/OnyxToolsMeta.Workspace/MetaInitialize.Notebook"
+if (-not (Check-FabricNotebookExists -WorkspaceName "OnyxToolsMeta" -NotebookName "NB - Initial Table Creation")) {
+    fab import "/OnyxToolsMeta.Workspace/NB - Initial Table Creation.Notebook" -i ".\NB - Initial Table Creation.Notebook" -f
+    fab job run "/OnyxToolsMeta.Workspace/NB - Initial Table Creation.Notebook"
 }
 
 #Creating Tools workspace
@@ -177,10 +187,6 @@ if (-not (Check-FabricNotebookExists -WorkspaceName "/OnyxTools.Workspace" -Note
 
 if (-not (Check-FabricNotebookExists -WorkspaceName "/OnyxTools.Workspace" -NotebookName "NB - Check Disabled Notebooks")) {
     fab import "/OnyxTools.Workspace/NB - Check Disabled Notebooks.Notebook" -i "$PSScriptRoot\NB - Check Disabled Notebooks.Notebook" -f
-}
-
-if (-not (Check-FabricNotebookExists -WorkspaceName "/OnyxTools.Workspace" -NotebookName "NB - Exclude Shortcuts")) {
-    fab import "/OnyxTools.Workspace/NB - Exclude Shortcuts.Notebook" -i "$PSScriptRoot\NB - Exclude Shortcuts.Notebook" -f
 }
 
 if (-not (Check-FabricNotebookExists -WorkspaceName "/OnyxTools.Workspace" -NotebookName "NB - Load Lakehouse Maintenance Data")) {
