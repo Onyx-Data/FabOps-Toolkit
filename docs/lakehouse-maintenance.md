@@ -26,3 +26,13 @@ These logs allow teams to **track trends over time**, ensuring maintenance is im
 - Run on a **regular schedule** (e.g., daily, weekly) depending on data volume.
 - Particularly useful before heavy querying periods or releases.
 - Should be paired with monitoring dashboards for query and table health.
+
+## References
+
+Here are some references about the issues which are solved by this tool:
+
+- [Microsoft Fabric and Delta lake secrets] (https://www.red-gate.com/simple-talk/blogs/microsoft-fabric-and-the-delta-tables-secrets/)
+- [Using Spark Jobs for Multiple Lakehouse Maintenance in Microsoft Fabric] (https://www.red-gate.com/simple-talk/databases/sql-server/bi-sql-server/using-spark-jobs-for-multiple-lakehouse-maintenance-in-microsoft-fabric/)
+- [Fabric Monday 06: Delta Optimization Secrets] (https://www.youtube.com/watch?v=BluZJxfwfCM&list=PLNbt9tnNIlQ5TB-itSbSdYd55-2F1iuMK)
+- [Fabric Monday 07: Schedule Optimization Maintenance] (https://www.youtube.com/watch?v=3x2CffbLxTA&list=PLNbt9tnNIlQ5TB-itSbSdYd55-2F1iuMK)
+- [Fabric Monday 08: Optimization Maintenance for Multiple Lakehouses] (https://www.youtube.com/watch?v=See6XZ-vx0s&list=PLNbt9tnNIlQ5TB-itSbSdYd55-2F1iuMK)
