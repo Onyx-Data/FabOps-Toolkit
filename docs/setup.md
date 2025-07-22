@@ -24,14 +24,17 @@ Follow the instructions in the official Microsoft documentation to install Power
 
 Go to the GitHub [Releases](#) page and download the latest version of `setup.zip`.
 
-![GitHub Releases Page](images/github-release-page.png)
+![Step 1 : ](images/release01.png)
+
+![Step 2 : ](images/release02.png)
+
+![Step 3 : ](images/release03.png)
 
 After downloading:
 
 1. Locate the downloaded `setup.zip` file.
 2. **Extract** its contents to a known location on your machine, such as `C:\FabricTools`.
 
-![Extract ZIP File](images/extract-zip.png)
 
 ---
 
@@ -61,9 +64,7 @@ This script will:
 
 ## ✅ After Setup
 
-Once setup completes, you can start using the tools. Each tool includes its own README and usage documentation inside the extracted folder.
-
-![Setup Completed](images/setup-success.png)
+Once setup completes, you can start using the tools. Each tool includes its own README and usage documentation here in the repository
 
 ---
 
