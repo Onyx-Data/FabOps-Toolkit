@@ -1,27 +1,29 @@
 # 📥 Save JSON Tool – When and Why
 
-## Problem
+## 🧩 Problem – Can You Prove What Was Ingested?
 
-Ingesting data from APIs or external systems can be unpredictable:
-- API schema may change without notice
-- Data quality may vary between calls
-- Some records may cause parsing failures or data loss
+In modern data architectures like the **Medallion architecture**, raw data is ingested and passed through multiple stages of transformation — from raw to bronze, silver, and gold layers. By the time the data reaches the BI dashboards or analytical models, it may be **deeply transformed, filtered, aggregated, or joined**.
 
-When things go wrong, you need to **see exactly what was ingested**.
+Now imagine a scenario where someone questions the accuracy of a dashboard number:
+- Why is this customer missing?
+- Why does this total seem too low?
+- Why is the format of this field inconsistent?
 
-## Why this tool matters
+To answer those questions, you must **trace the data lineage** back to the moment it was first received — and that’s only possible if you kept a precise copy of the **raw ingested data**.
 
-This tool allows you to:
-- Save the raw JSON response from an API or ingestion source
-- Store it in OneLake or another location for traceability
+Without it, you're stuck:
+- Guessing whether the data arrived malformed
+- Re-ingesting (if the API even allows it)
+- Struggling to reconstruct what the pipeline actually received
 
-This enables:
-- Debugging ingestion errors
-- Reprocessing failed data without re-calling the API
-- Providing an **audit trail** of what data was accepted
+## ✅ Why this tool matters
 
-## When to use it
+The **Save JSON Tool** solves this gap by letting you **persist the raw data** exactly as it was received from the source — before any transformation or parsing occurs.
 
-- For any ingestion process from dynamic APIs
-- When working with external systems where contracts may change
-- In regulated environments where **data lineage** matters
+It enables:
+- Full traceability and data lineage across all transformation layers
+- Post-mortem investigations whe
+
+## References
+
+- [Microsoft Fabric: Ingesting from API’s and the JSON result] (https://www.red-gate.com/simple-talk/blogs/microsoft-fabric-ingesting-from-apis-and-the-json-result/)
