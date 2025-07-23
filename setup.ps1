@@ -205,8 +205,8 @@ if (-not (Check-FabricNotebookExists -WorkspaceName "/OnyxTools.Workspace" -Note
     fab import "/OnyxTools.Workspace/NB - TableSizeAnalysis.Notebook" -i "$PSScriptRoot\NB - TableSizeAnalysis.Notebook" -f
 }
 
-if (-not (Check-FabricNotebookExists -WorkspaceName "/OnyxTools.Workspace" -NotebookName "NB - Shortcut Identification")) {
-    fab import "/OnyxTools.Workspace/NB - Shortcut Identification.Notebook" -i "$PSScriptRoot\NB - Shortcut Identification.Notebook" -f
+if (-not (Check-FabricNotebookExists -WorkspaceName "/OnyxTools.Workspace" -NotebookName "NB - Shortcuts Identification")) {
+    fab import "/OnyxTools.Workspace/NB - Shortcuts Identification.Notebook" -i "$PSScriptRoot\NB - Shortcuts Identification.Notebook" -f
 }
 
 if (-not (Check-FabricNotebookExists -WorkspaceName "/OnyxTools.Workspace" -NotebookName "Fabric_utils")) {
