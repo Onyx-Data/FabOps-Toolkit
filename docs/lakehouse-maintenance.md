@@ -27,6 +27,10 @@ These logs allow teams to **track trends over time**, ensuring maintenance is im
 - Particularly useful before heavy querying periods or releases.
 - Should be paired with monitoring dashboards for query and table health.
 
+## Architecture
+
+![architecture](images/lakemaintenance.png)
+
 ## References
 
 Here are some references about the issues which are solved by this tool:
