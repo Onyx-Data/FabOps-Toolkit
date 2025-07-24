@@ -30,6 +30,12 @@ The image of the ingested data is saved in the files area of the lakehouse. The 
 
 ![architecture](images/savejson.png)
 
+## See Also
+
+- [Setup the tools](setup.md)
+- [Configure Lakehouse Maintenance](../Documentation/Solution-Overview/Productionalized-Items/How-to-Set-Up-Documentation/Save-JSON-tool.md)
+- [Home](../README.md)
+
 ## References
 
 - [Microsoft Fabric: Ingesting from API’s and the JSON result] (https://www.red-gate.com/simple-talk/blogs/microsoft-fabric-ingesting-from-apis-and-the-json-result/)

@@ -24,6 +24,12 @@ This prevents accidental misuse and improves the accuracy and safety of your lak
 - As a **pre-step** in any lakehouse-wide batch operation (e.g., vacuum, optimize, lineage building).
 - When building tools that traverse table lists.
 
+## See Also
+
+- [Setup the tools](setup.md)
+- [Configure Lakehouse Maintenance](../Documentation/Solution-Overview/Productionalized-Items/How-to-Set-Up-Documentation/Shortcut-Identification-System.md)
+- [Home](../README.md)
+
 ## References
 
 - [How Shortcuts affect Lakehouse’s Maintenance] (https://www.red-gate.com/simple-talk/blogs/how-shortcuts-affect-lakehouses-maintenance/)

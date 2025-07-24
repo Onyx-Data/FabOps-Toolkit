@@ -31,6 +31,12 @@ These logs allow teams to **track trends over time**, ensuring maintenance is im
 
 ![architecture](images/lakemaintenance.png)
 
+## See Also
+
+- [Setup the tools](setup.md)
+- [Configure Lakehouse Maintenance](../Documentation/Solution-Overview/Productionalized-Items/How-to-Set-Up-Documentation/lakehouse-maintenance-tool.md)
+- [Home](../README.md)
+
 ## References
 
 Here are some references about the issues which are solved by this tool:

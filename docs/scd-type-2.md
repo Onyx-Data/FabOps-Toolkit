@@ -56,3 +56,9 @@ Use this tool in **any dimensional model** where past and present states coexist
 If you’re using Power BI or any other BI tool, incorrect dimensions don’t just pollute your data — they corrupt the stories your dashboards tell.
 
 ✅ Don’t risk making decisions based on a version of history that **never happened**.
+
+## See Also
+
+- [Setup the tools](setup.md)
+- [Configure Lakehouse Maintenance](../Documentation/Solution-Overview/Productionalized-Items/How-to-Set-Up-Documentation/SCD-type-2-Tool.md)
+- [Home](../README.md)

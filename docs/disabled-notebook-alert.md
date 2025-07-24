@@ -22,6 +22,12 @@ This tool takes a smarter approach:
 
 ![architecture](images/notebookDisabledSystem.png)
 
+## See Also
+
+- [Setup the tools](setup.md)
+- [Configure Lakehouse Maintenance](../Documentation/Solution-Overview/Productionalized-Items/How-to-Set-Up-Documentation/Notebook-Disabled-Monitoring-Tool.md)
+- [Home](../README.md)
+
 ## When to use it
 
 - Deploy this tool to monitor production notebooks with schedules.

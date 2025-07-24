@@ -44,6 +44,13 @@ If you are experiencing issues with SQL Endpoint freshness due to high file coun
 
 ---
 
+## See Also
+
+- [Setup the tools](setup.md)
+- [Configure Lakehouse Maintenance](../Documentation/Solution-Overview/Productionalized-Items/How-to-Set-Up-Documentation/SQL-Endpoint-Refresh-Tool.md)
+- [Home](../README.md)
+
+
 ## References
 
 - [SQL Endpoint Secrets you need to know](https://www.red-gate.com/simple-talk/blogs/sql-endpoint-secrets-you-need-to-know/)
