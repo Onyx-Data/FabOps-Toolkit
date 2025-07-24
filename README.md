@@ -13,7 +13,7 @@ Performs essential delta table maintenance operations such as file compaction an
 
 [Discover more about this tool](docs/lakehouse-maintenance.md)
 
-Check the setup and usage instructions
+[Check the setup and usage instructions](Documentation/Solution-Overview/Productionalized-Items/How-to-Set-Up-Documentation/lakehouse-maintenance-tool.md)
 
 ### 🚨 Disabled Notebook Alert
 Detects and alerts when a notebook schedule has been silently disabled after repeated failures. Helps prevent unnoticed stoppages in critical pipelines.

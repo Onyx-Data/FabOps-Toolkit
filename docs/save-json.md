@@ -22,7 +22,13 @@ The **Save JSON Tool** solves this gap by letting you **persist the raw data** e
 
 It enables:
 - Full traceability and data lineage across all transformation layers
-- Post-mortem investigations whe
+- Post-mortem investigations
+
+## Folder Structure
+
+The image of the ingested data is saved in the files area of the lakehouse. The tool uses the structure below.
+
+![architecture](images/savejson.png)
 
 ## References
 

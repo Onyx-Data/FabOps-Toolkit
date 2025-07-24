@@ -14,6 +14,14 @@ This tool takes a smarter approach:
 - **It doesn’t alert on every failure**, but only when a notebook becomes disabled due to repeated failures.
 - Prevents unnoticed stoppage of critical jobs without overwhelming your team with noisy alerts.
 
+## Architecture
+
+- The data pipeline triggers a notebook
+- The notebook uses Fabric API to check if the schedule of monitored notebooks are enabled
+- An alert message is prepared and set by email if there are schedules disabled
+
+![architecture](images/notebookDisabledSystem.png)
+
 ## When to use it
 
 - Deploy this tool to monitor production notebooks with schedules.
