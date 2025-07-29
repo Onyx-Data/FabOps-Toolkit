@@ -1,60 +1,20 @@
-# Microsoft Fabric Open Source Tools
+# Introduction 
+TODO: Give a short introduction of your project. Let this section explain the objectives or the motivation behind this project. 
 
-This repository contains a collection of open-source tools designed to enhance the operational efficiency, reliability, and manageability of your Microsoft Fabric environment.
+# Getting Started
+TODO: Guide users through getting your code up and running on their own system. In this section you can talk about:
+1.	Installation process
+2.	Software dependencies
+3.	Latest releases
+4.	API references
 
-Each tool addresses a specific need or gap encountered when using Fabric Lakehouses, SQL Endpoints, Notebooks, and ingestion processes.
+# Build and Test
+TODO: Describe and show how to build your code and run the tests. 
 
-How to setup the Tools : [Setup](docs/setup.md)
+# Contribute
+TODO: Explain how other users and developers can contribute to make your code better. 
 
-## Tools Overview
-
-### 🔧 Lakehouse Maintenance Tool
-Performs essential delta table maintenance operations such as file compaction and cleanup. Tracks top query performance and table statistics during each run to monitor lakehouse health over time.
-
-[Discover more about this tool](docs/lakehouse-maintenance.md)
-
-[Check the setup and usage instructions](Documentation/Solution-Overview/Productionalized-Items/How-to-Set-Up-Documentation/lakehouse-maintenance-tool.md)
-
-### 🚨 Disabled Notebook Alert
-Detects and alerts when a notebook schedule has been silently disabled after repeated failures. Helps prevent unnoticed stoppages in critical pipelines.
-
-[Discover more about this tool](docs/disabled-notebook-alert.md)
-
-[Check the setup and usage instructions](Documentation/Solution-Overview/Productionalized-Items/How-to-Set-Up-Documentation/Notebook-Disabled-Monitoring-Tool.md)
-
-
-### 🔄 SQL Endpoint Refresh Tool
-Refreshes SQL Endpoints post-data ingestion to ensure metadata consistency and avoid query issues related to recent changes in lakehouse content.
-
-[Discover more about this tool](docs/sql-endpoint-refresh.md)
-
-[Check the setup and usage instructions](Documentation/Solution-Overview/Productionalized-Items/How-to-Set-Up-Documentation/SQL-Endpoint-Refresh-Tool.md)
-
-### 🧱 SCD Type 2 Tool
-Implements Slowly Changing Dimensions Type 2 logic with minimal configuration. Automatically handles insertions, updates, and historicization for dimension records.
-
-[Discover more about this tool](docs/scd-type-2.md)
-
-[Check the setup and usage instructions](Documentation/Solution-Overview/Productionalized-Items/How-to-Set-Up-Documentation/SCD-type-2-Tool.md)
-
-### 🧭 Shortcut Identification Tool
-Identifies and flags shortcuts in a lakehouse to exclude them from maintenance operations and avoid redundant processing.
-
-[Discover more about this tool](docs/shortcut-identification.md)
-
-[Check the setup and usage instructions](Documentation/Solution-Overview/Productionalized-Items/How-to-Set-Up-Documentation/Shortcut-Identification-System.md)
-
-### 📥 Save JSON Tool
-Captures and stores raw JSON data during ingestion processes, providing a verifiable snapshot of the original input—especially important when working with APIs.
-
-[Discover more about this tool](docs/save-json.md)
-
-[Check the setup and usage instructions](Documentation/Solution-Overview/Productionalized-Items/How-to-Set-Up-Documentation/Save-JSON-tool.md)
-
-## Documentation
-
-See the `docs/` folder for detailed explanation of when and why each tool is used.
-
----
-
-Contributions, issues, and feedback are welcome!
+If you want to learn more about creating good readme files then refer the following [guidelines](https://docs.microsoft.com/en-us/azure/devops/repos/git/create-a-readme?view=azure-devops). You can also seek inspiration from the below readme files:
+- [ASP.NET Core](https://github.com/aspnet/Home)
+- [Visual Studio Code](https://github.com/Microsoft/vscode)
+- [Chakra Core](https://github.com/Microsoft/ChakraCore)

@@ -1,1 +1,98 @@
-{"$schema":"http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#","contentVersion":"1.0.0.0","parameters":{},"variables":{},"resources":[{"name":"PL - Disabled Notebook Alert","type":"pipelines","apiVersion":"2018-06-01","properties":{"activities":[{"name":"Check Disabled Notebooks","type":"TridentNotebook","dependsOn":[],"policy":{"timeout":"0.12:00:00","retry":0,"retryIntervalInSeconds":30,"secureOutput":false,"secureInput":false},"typeProperties":{"notebookId":"6ccafa73-1280-4cd7-b684-0ee65a4af72c","workspaceId":"99d86726-bf0e-47a4-ba2c-b882679df8f1"}},{"name":"If Condition1","type":"IfCondition","dependsOn":[{"activity":"Construct Table","dependencyConditions":["Succeeded"]}],"typeProperties":{"expression":{"value":"@greater(length(activity('Check Disabled Notebooks').output.result.exitValue), 2)\n","type":"Expression"},"ifFalseActivities":[],"ifTrueActivities":[{"name":"Office 365 Outlook1","type":"Office365Outlook","dependsOn":[],"typeProperties":{"inputs":{"method":"post","path":"/v2/Mail","body":{"To":"francis.folaranmi@onyxdata.co.uk;nalaka.wanniarachchi@onyxdata.co.uk;dennes.torres@onyxdata.co.uk","Subject":"❗DISABLED NOTEBOOK REFRESH","Body":"<p>Hello Team,</p>\n<p>Here are the notebooks with disabled schedules:</p>\n<table border=\"1\" cellpadding=\"5\" cellspacing=\"0\">\n    <tr>\n        <th>Workspace Name</th>\n        <th>Notebook Name</th>\n    </tr>\n    @{variables('tablesRow')}\n</table>\n","Sensitivity":"","Importance":"Normal"}}}}]}},{"name":"Construct Table","type":"ForEach","dependsOn":[{"activity":"Check Disabled Notebooks","dependencyConditions":["Succeeded"]}],"typeProperties":{"items":{"value":"@json(activity('Check Disabled Notebooks').output.result.exitValue)","type":"Expression"},"activities":[{"name":"Append variable1","type":"AppendVariable","dependsOn":[],"typeProperties":{"variableName":"tablesRow","value":{"value":"@concat('<tr><td>', item().WorkspaceName, '</td><td>', item().NotebookName, '</td></tr>')\n","type":"Expression"}}}]}}],"variables":{"tablesRow":{"type":"Array"}},"lastModifiedByObjectId":"f74b702c-0665-4dcd-b88b-bd8cd4adb958","lastPublishTime":"2025-07-10T09:42:07Z"},"dependsOn":[]}]}
+{
+    "properties": {
+        "activities": [
+            {
+                "type": "TridentNotebook",
+                "typeProperties": {
+                    "notebookId": "6ccafa73-1280-4cd7-b684-0ee65a4af72c",
+                    "workspaceId": "99d86726-bf0e-47a4-ba2c-b882679df8f1"
+                },
+                "policy": {
+                    "timeout": "0.12:00:00",
+                    "retry": 0,
+                    "retryIntervalInSeconds": 30,
+                    "secureInput": false,
+                    "secureOutput": false
+                },
+                "name": "Check Disabled Notebooks",
+                "dependsOn": []
+            },
+            {
+                "type": "IfCondition",
+                "typeProperties": {
+                    "expression": {
+                        "value": "@greater(length(activity('Check Disabled Notebooks').output.result.exitValue), 2)\n",
+                        "type": "Expression"
+                    },
+                    "ifTrueActivities": [
+                        {
+                            "type": "Office365Outlook",
+                            "typeProperties": {
+                                "inputs": {
+                                    "body": {
+                                        "To": "francis.folaranmi@onyxdata.co.uk;nalaka.wanniarachchi@onyxdata.co.uk;dennes.torres@onyxdata.co.uk",
+                                        "Subject": "❗DISABLED NOTEBOOK REFRESH",
+                                        "Body": "<p>Hello Team,</p>\n<p>Here are the notebooks with disabled schedules:</p>\n<table border=\"1\" cellpadding=\"5\" cellspacing=\"0\">\n    <tr>\n        <th>Workspace Name</th>\n        <th>Notebook Name</th>\n    </tr>\n    @{variables('tablesRow')}\n</table>\n",
+                                        "Sensitivity": "",
+                                        "Importance": "Normal"
+                                    },
+                                    "method": "post",
+                                    "path": "/v2/Mail"
+                                }
+                            },
+                            "name": "Office 365 Outlook1",
+                            "dependsOn": []
+                        }
+                    ],
+                    "ifFalseActivities": []
+                },
+                "name": "If Condition1",
+                "dependsOn": [
+                    {
+                        "activity": "Construct Table",
+                        "dependencyConditions": [
+                            "Succeeded"
+                        ]
+                    }
+                ]
+            },
+            {
+                "type": "ForEach",
+                "typeProperties": {
+                    "items": {
+                        "value": "@json(activity('Check Disabled Notebooks').output.result.exitValue)",
+                        "type": "Expression"
+                    },
+                    "activities": [
+                        {
+                            "type": "AppendVariable",
+                            "typeProperties": {
+                                "variableName": "tablesRow",
+                                "value": {
+                                    "value": "@concat('<tr><td>', item().WorkspaceName, '</td><td>', item().NotebookName, '</td></tr>')\n",
+                                    "type": "Expression"
+                                }
+                            },
+                            "name": "Append variable1",
+                            "dependsOn": []
+                        }
+                    ]
+                },
+                "name": "Construct Table",
+                "dependsOn": [
+                    {
+                        "activity": "Check Disabled Notebooks",
+                        "dependencyConditions": [
+                            "Succeeded"
+                        ]
+                    }
+                ]
+            }
+        ],
+        "variables": {
+            "tablesRow": {
+                "type": "Array"
+            }
+        }
+    }
+}
