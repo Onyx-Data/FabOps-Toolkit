@@ -19,7 +19,7 @@ This regular housekeeping ensures a **healthy SQL Endpoint environment**, and mi
 
 ## **How to Install:**
 
-Please follow the [setup instructions](https://github.com/Onyx-Data/FabOps-Toolkit/docs/Setup) to install the tool and its dependencies.
+Please follow the [setup instructions](https://github.com/Onyx-Data/FabOps-Toolkit/blob/main/docs/Setup) to install the tool and its dependencies.
 
 This will also install the **Lakehouse Maintenance Report**, a Power BI report used to visualize and analyze the metadata and performance data collected by this tool.
 
@@ -36,7 +36,7 @@ This will also install the **Lakehouse Maintenance Report**, a Power BI report u
    - The performance queries retrieve semantic models and reports by their Ids. It tries to translate the names by checking the workspaces you choose
    - In code cell 4, define the name of the workspaces where you would like the code to check for the translation of semantic models and report ids
 
-![image.png](https://github.com/Onyx-Data/FabOps-Toolkit/docs/images/image-fb9c759e-ebcd-4dc2-9d94-826152c329b9.png)
+![image.png](https://github.com/Onyx-Data/FabOps-Toolkit/blob/main/docs/images/image-fb9c759e-ebcd-4dc2-9d94-826152c329b9.png)
 
 
 3.  **Schedule** `**NB - Optimize Lakehouse**`
@@ -50,17 +50,17 @@ The semantic model for the lakehouse optimization report needs to be configured,
 
 1. **Go to the Lakehouse Maintenance Report Semantic Model and open Settings**
 
-![image.png](https://github.com/Onyx-Data/FabOps-Toolkit/docs/images/image-e5826b42-ab02-46db-bb0c-81ec58bf49a2.png)
+![image.png](https://github.com/Onyx-Data/FabOps-Toolkit/blob/main/docs/images/image-e5826b42-ab02-46db-bb0c-81ec58bf49a2.png)
 
 2. **Open the option Gateway and Cloud Connection**
 
-![==image_0==.png](https://github.com/Onyx-Data/FabOps-Toolkit/docs/images/==image_0==-e99eb38d-8ec2-4692-bf52-97e1467a9641.png) 
+![==image_0==.png](https://github.com/Onyx-Data/FabOps-Toolkit/blob/main/docs/images/==image_0==-e99eb38d-8ec2-4692-bf52-97e1467a9641.png) 
 
 3. **In the drop down close to the connection, choose Create New Connection**
 
 4. **In the New Connection window, give a name to the connection**
 
-![==image_0==.png](https://github.com/Onyx-Data/FabOps-Toolkit/docs/images/==image_0==-238672fb-82ad-4671-ad05-bfdeba41f4ed.png) 
+![==image_0==.png](https://github.com/Onyx-Data/FabOps-Toolkit/blob/main/docs/images/==image_0==-238672fb-82ad-4671-ad05-bfdeba41f4ed.png) 
 
 5. **Choose the authentication method as Oauth 2.0**
  
@@ -82,7 +82,7 @@ We strongly recommend to schedule the refresh of the semantic model
 
 2. **Under Refresh, turn on the schedule**
 
-![==image_0==.png](https://github.com/Onyx-Data/FabOps-Toolkit/docs/images/==image_0==-093a7463-b8e2-461b-87f1-e0bc88a7cfb5.png) 
+![==image_0==.png](https://github.com/Onyx-Data/FabOps-Toolkit/blob/main/docs/images/==image_0==-093a7463-b8e2-461b-87f1-e0bc88a7cfb5.png) 
 
 3. **Choose the schedule frequency**
 
@@ -117,6 +117,6 @@ We strongly recommend to schedule the refresh of the semantic model
 
 ## **See Also**
 
-- [Discover more about this tool](https://github.com/Onyx-Data/FabOps-Toolkit/docs/Onyx-Tools/lakehouse-maintenance)
-- [Home](https://github.com/Onyx-Data/FabOps-Toolkit/README.md)
+- [Discover more about this tool](https://github.com/Onyx-Data/FabOps-Toolkit/blob/main/docs/Onyx-Tools/lakehouse-maintenance)
+- [Home](https://github.com/Onyx-Data/FabOps-Toolkit/blob/main/README.md)
 

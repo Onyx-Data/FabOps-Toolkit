@@ -17,5 +17,5 @@ Run the lines of code below in your notebook ingesting data:
 
 ## **See Also**
 
-- [Discover more about this tool](https://github.com/Onyx-Data/FabOps-Toolkit/docs/Onyx-Tools/scd-type-2)
-- [Home](https://github.com/Onyx-Data/FabOps-Toolkit/README.md)
+- [Discover more about this tool](https://github.com/Onyx-Data/FabOps-Toolkit/blob/main/docs/Onyx-Tools/scd-type-2)
+- [Home](https://github.com/Onyx-Data/FabOps-Toolkit/blob/main/README.md)

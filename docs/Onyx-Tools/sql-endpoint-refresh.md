@@ -40,15 +40,15 @@ Even if no schema change occurs, a **refresh should still be triggered** to upda
 
 ## Additional recommendation
 
-If you are experiencing issues with SQL Endpoint freshness due to high file counts in the lakehouse, consider also using the [Lakehouse Maintenance Tool](https://github.com/Onyx-Data/FabOps-Toolkit/docs/Onyx-Tools/lakehouse-maintenance.md) to reduce file fragmentation and improve SQL Endpoint responsiveness.
+If you are experiencing issues with SQL Endpoint freshness due to high file counts in the lakehouse, consider also using the [Lakehouse Maintenance Tool](https://github.com/Onyx-Data/FabOps-Toolkit/blob/main/docs/Onyx-Tools/lakehouse-maintenance.md) to reduce file fragmentation and improve SQL Endpoint responsiveness.
 
 ---
 
 ## See Also
 
-- [Setup the tools](https://github.com/Onyx-Data/FabOps-Toolkit/docs/Setup)
-- [Configure SQL Endpoint Refresh Tool](https://github.com/Onyx-Data/FabOps-Toolkit/docs/How-to-Set-Up-Tool-docs/SQL-Endpoint-Refresh-Tool)
-- [Home](https://github.com/Onyx-Data/FabOps-Toolkit/README.md)
+- [Setup the tools](https://github.com/Onyx-Data/FabOps-Toolkit/blob/main/docs/Setup)
+- [Configure SQL Endpoint Refresh Tool](https://github.com/Onyx-Data/FabOps-Toolkit/blob/main/docs/How-to-Set-Up-Tool-docs/SQL-Endpoint-Refresh-Tool)
+- [Home](https://github.com/Onyx-Data/FabOps-Toolkit/blob/main/README.md)
 
 
 ## References

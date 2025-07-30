@@ -24,11 +24,11 @@ Follow the instructions in the official Microsoft documentation to install Power
 
 Go to the GitHub Releases page and download the latest version of `setup.zip`.
 
-![Step 1 : ](https://github.com/Onyx-Data/FabOps-Toolkit/docs/images/release01.png)
+![Step 1 : ](https://github.com/Onyx-Data/FabOps-Toolkit/blob/main/docs/images/release01.png)
 
-![Step 2 : ](https://github.com/Onyx-Data/FabOps-Toolkit/docs/images/release02.png)
+![Step 2 : ](https://github.com/Onyx-Data/FabOps-Toolkit/blob/main/docs/images/release02.png)
 
-![Step 3 : ](https://github.com/Onyx-Data/FabOps-Toolkit/docs/images/release03.png)
+![Step 3 : ](https://github.com/Onyx-Data/FabOps-Toolkit/blob/main/docs/images/release03.png)
 
 After downloading:
 
