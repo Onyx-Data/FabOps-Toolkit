@@ -4,14 +4,14 @@ This repository contains a collection of open-source tools designed to enhance t
 
 Each tool addresses a specific need or gap encountered when using Fabric Lakehouses, SQL Endpoints, Notebooks, and ingestion processes.
 
-How to setup the Tools : [Setup](docs/Setup.md)
+How to setup the Tools : [Setup](/docs/Setup.md)
 
 ## Tools Overview
 
 ### 🔧 Lakehouse Maintenance Tool
 Performs essential delta table maintenance operations such as file compaction and cleanup. Tracks top query performance and table statistics during each run to monitor lakehouse health over time.
 
-[Discover more about this tool](docs/Onyx-Tools/lakehouse-maintenance)
+[Discover more about this tool](/docs/Onyx-Tools/lakehouse-maintenance)
 
 [Check the setup and usage instructions](docs/How-to-Set-Up-Tool-docs/lakehouse-maintenance-tool)
 
