@@ -22,7 +22,7 @@ Follow the instructions in the official Microsoft documentation to install Power
 
 ## 📦 Downloading the Tools
 
-Go to the GitHub [Releases](#) page and download the latest version of `setup.zip`.
+Go to the GitHub Releases page and download the latest version of `setup.zip`.
 
 ![Step 1 : ](images/release01.png)
 

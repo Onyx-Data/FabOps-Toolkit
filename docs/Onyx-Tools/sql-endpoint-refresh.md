@@ -46,9 +46,9 @@ If you are experiencing issues with SQL Endpoint freshness due to high file coun
 
 ## See Also
 
-- [Setup the tools](/Documentation/Production/docs/Setup)
-- [Configure SQL Endpoint Refresh Tool](/Documentation/Production/docs/How-to-Set-Up-Tool-docs/SQL-Endpoint-Refresh-Tool)
-- [Home](/Documentation/Production/README)
+- [Setup the tools](../Setup)
+- [Configure SQL Endpoint Refresh Tool](../How-to-Set-Up-Tool-docs/SQL-Endpoint-Refresh-Tool)
+- [Home](../../README)
 
 
 ## References

@@ -28,13 +28,13 @@ It enables:
 
 The image of the ingested data is saved in the files area of the lakehouse. The tool uses the structure below.
 
-![architecture](images/savejson.png)
+![architecture](../images/savejson.png)
 
 ## See Also
 
-- [Setup the tools](/Documentation/Production/docs/Setup)
-- [Configure Save JSON tool](/Documentation/Production/docs/How-to-Set-Up-Tool-docs/Save-JSON-tool)
-- [Home](/Documentation/Production/README)
+- [Setup the tools](../Setup)
+- [Configure Save JSON tool](../How-to-Set-Up-Tool-docs/Save-JSON-tool)
+- [Home](../../README)
 
 ## References
 

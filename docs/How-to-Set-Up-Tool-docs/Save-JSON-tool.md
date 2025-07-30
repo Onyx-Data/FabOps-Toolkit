@@ -4,7 +4,7 @@ Run the notebook with mssparkutils and pass the necessary arguments from inside 
 The parameters of the mssparkutils MUST be changed as need.
 
 - "contenttosave": the piece of data to be saved must be JSON. See below:
-![image.png](/.attachments/image-3c287785-2be2-4959-b6c2-2c82f0777f65.png)
+![image.png](../images/image-3c287785-2be2-4959-b6c2-2c82f0777f65.png)
 - "path": change the path
 - "filenameprefix": adjust the file prefix
 - "include_hourly": `include_hourly ` is an optional argument that creates hour subfolder. 
@@ -23,3 +23,8 @@ if hour subfolder is not desired:
 
 
 `mssparkutils.notebook.run("NB - Save JSON",arguments= { "contenttosave": content,"path": "AuditTrail/", "filenameprefix": "AuditTrailFile", "ingestionid": executionId, "include_hourly": include_hourly })`
+
+## **See Also**
+
+- [Discover more about this tool](../Onyx-Tools/save-json)
+- [Home](../Setup)

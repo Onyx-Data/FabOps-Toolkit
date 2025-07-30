@@ -59,6 +59,6 @@ If you’re using Power BI or any other BI tool, incorrect dimensions don’t ju
 
 ## See Also
 
-- [Setup the tools](/Documentation/Production/docs/Setup)
-- [Configure SCD type 2 Tool](/Documentation/Production/docs/How-to-Set-Up-Tool-docs/SCD-type-2-Tool)
-- [Home](/Documentation/Production/README)
+- [Setup the tools](../Setup)
+- [Configure SCD type 2 Tool](../How-to-Set-Up-Tool-docs/SCD-type-2-Tool)
+- [Home](../../README)

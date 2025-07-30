@@ -14,3 +14,8 @@ Run the lines of code below in your notebook ingesting data:
 1. read and save existing data in another variable _df_old_
 
 1. `final_df = merge_scd_type2(df_old,df_new,'KeyColumn')` - track changes and merge the two dataframes. 
+
+## **See Also**
+
+- [Discover more about this tool](../Onyx-Tools/scd-type-2)
+- [Home](../Setup)

@@ -42,3 +42,8 @@ After successfully triggering the refresh, the notebook logs the request details
 ## Integration and Triggering
 
 This NoteBook can be executed within other data ingestion notebooks after the main data processing cells have completed their execution. This ensures that a metadata refresh is triggered immediately after new data is added to the Lakehouse.
+
+## **See Also**
+
+- [Discover more about this tool](../Onyx-Tools/sql-endpoint-refresh)
+- [Home](../Setup)

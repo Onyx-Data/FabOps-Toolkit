@@ -42,3 +42,8 @@ This notebook can be used as a standalone tool for Lakehouse maintenance or inte
 *   Auditing shortcut usage
 *   Validating shortcut configurations
 *   Troubleshooting data access issues related to shortcuts
+
+## **See Also**
+
+- [Discover more about this tool](../Onyx-Tools/shortcut-identification)
+- [Home](../Setup)

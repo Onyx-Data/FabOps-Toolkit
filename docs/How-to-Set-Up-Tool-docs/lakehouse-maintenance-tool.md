@@ -19,7 +19,7 @@ This regular housekeeping ensures a **healthy SQL Endpoint environment**, and mi
 
 ## **How to Install:**
 
-Please follow the [setup instructions in `setup.md`](./setup.md) to install the tool and its dependencies.
+Please follow the [setup instructions](../Setup) to install the tool and its dependencies.
 
 This will also install the **Lakehouse Maintenance Report**, a Power BI report used to visualize and analyze the metadata and performance data collected by this tool.
 
@@ -120,3 +120,8 @@ We strongly recommend to schedule the refresh of the semantic model
 - ✅ This tool is **non-disruptive** when scheduled wisely — avoid overlapping with ingestion jobs.
 - 🔍 Metadata and performance logs can help with **scaling**, **troubleshooting**, or **auditing**.
 - 📊 Use the report to **track the health of your lakehouse over time** and catch problems before they affect business reporting.
+
+## **See Also**
+
+- [Discover more about this tool](../Onyx-Tools/lakehouse-maintenance)
+- [Home](../Setup)

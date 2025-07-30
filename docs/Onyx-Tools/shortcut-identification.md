@@ -26,9 +26,9 @@ This prevents accidental misuse and improves the accuracy and safety of your lak
 
 ## See Also
 
-- [Setup the tools](/Documentation/Production/docs/Setup)
-- [Configure Shortcut Identification System](/Documentation/Production/docs/How-to-Set-Up-Tool-docs/Shortcut-Identification-System)
-- [Home](/Documentation/Production/README)
+- [Setup the tools](../Setup)
+- [Configure Shortcut Identification System](../How-to-Set-Up-Tool-docs/Shortcut-Identification-System)
+- [Home](../../README)
 
 ## References
 

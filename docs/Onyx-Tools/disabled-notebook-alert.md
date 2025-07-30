@@ -24,9 +24,9 @@ This tool takes a smarter approach:
 
 ## See Also
 
-- [Setup the tools](/Documentation/Production/docs/Setup)
-- [Configure Notebook Disabled Monitoring Tool](/Documentation/Production/docs/How-to-Set-Up-Tool-docs/Notebook-Disabled-Monitoring-Tool)
-- [Home](/Documentation/Production/README)
+- [Setup the tools](../Setup)
+- [Configure Notebook Disabled Monitoring Tool](../How-to-Set-Up-Tool-docs/Notebook-Disabled-Monitoring-Tool)
+- [Home](../../README)
 ## When to use it
 
 - Deploy this tool to monitor production notebooks with schedules.

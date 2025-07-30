@@ -33,9 +33,9 @@ These logs allow teams to **track trends over time**, ensuring maintenance is im
 
 ## See Also
 
-- [Setup the tools](/Documentation/Production/docs/Setup)
-- [Configure lakehouse maintenance tool](/Documentation/Production/docs/How-to-Set-Up-Tool-docs/lakehouse-maintenance-tool)
-- [Home](/Documentation/Production/README)
+- [Setup the tools](../Setup)
+- [Configure lakehouse maintenance tool](../How-to-Set-Up-Tool-docs/lakehouse-maintenance-tool)
+- [Home](../../README)
 
 ## References
 
