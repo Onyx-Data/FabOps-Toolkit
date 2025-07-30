@@ -26,8 +26,8 @@ This prevents accidental misuse and improves the accuracy and safety of your lak
 
 ## See Also
 
-- [Setup the tools](https://github.com/Onyx-Data/FabOps-Toolkit/blob/main/docs/Setup)
-- [Configure Shortcut Identification System](https://github.com/Onyx-Data/FabOps-Toolkit/blob/main/docs/How-to-Set-Up-Tool-docs/Shortcut-Identification-System)
+- [Setup the tools](https://github.com/Onyx-Data/FabOps-Toolkit/blob/main/docs/Setup.md)
+- [Configure Shortcut Identification System](https://github.com/Onyx-Data/FabOps-Toolkit/blob/main/docs/How-to-Set-Up-Tool-docs/Shortcut-Identification-System.md)
 - [Home](https://github.com/Onyx-Data/FabOps-Toolkit/blob/main/README.md)
 
 ## References

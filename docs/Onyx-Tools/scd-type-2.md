@@ -59,6 +59,6 @@ If you’re using Power BI or any other BI tool, incorrect dimensions don’t ju
 
 ## See Also
 
-- [Setup the tools](https://github.com/Onyx-Data/FabOps-Toolkit/blob/main/docs/Setup)
-- [Configure SCD type 2 Tool](https://github.com/Onyx-Data/FabOps-Toolkit/blob/main/docs/How-to-Set-Up-Tool-docs/SCD-type-2-Tool)
+- [Setup the tools](https://github.com/Onyx-Data/FabOps-Toolkit/blob/main/docs/Setup.md)
+- [Configure SCD type 2 Tool](https://github.com/Onyx-Data/FabOps-Toolkit/blob/main/docs/How-to-Set-Up-Tool-docs/SCD-type-2-Tool.md)
 - [Home](https://github.com/Onyx-Data/FabOps-Toolkit/blob/main/README.md)

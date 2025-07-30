@@ -24,8 +24,8 @@ This tool takes a smarter approach:
 
 ## See Also
 
-- [Setup the tools](https://github.com/Onyx-Data/FabOps-Toolkit/blob/main/docs/Setup)
-- [Configure Notebook Disabled Monitoring Tool](https://github.com/Onyx-Data/FabOps-Toolkit/blob/main/docs/How-to-Set-Up-Tool-docs/Notebook-Disabled-Monitoring-Tool)
+- [Setup the tools](https://github.com/Onyx-Data/FabOps-Toolkit/blob/main/docs/Setup.md)
+- [Configure Notebook Disabled Monitoring Tool](https://github.com/Onyx-Data/FabOps-Toolkit/blob/main/docs/How-to-Set-Up-Tool-docs/Notebook-Disabled-Monitoring-Tool.md)
 - [Home](https://github.com/Onyx-Data/FabOps-Toolkit/blob/main/README.md)
 ## When to use it
 

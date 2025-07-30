@@ -33,8 +33,8 @@ These logs allow teams to **track trends over time**, ensuring maintenance is im
 
 ## See Also
 
-- [Setup the tools](https://github.com/Onyx-Data/FabOps-Toolkit/blob/main/docs/Setup)
-- [Configure lakehouse maintenance tool](https://github.com/Onyx-Data/FabOps-Toolkit/blob/main/docs/How-to-Set-Up-Tool-docs/lakehouse-maintenance-tool)
+- [Setup the tools](https://github.com/Onyx-Data/FabOps-Toolkit/blob/main/docs/Setup.md)
+- [Configure lakehouse maintenance tool](https://github.com/Onyx-Data/FabOps-Toolkit/blob/main/docs/How-to-Set-Up-Tool-docs/lakehouse-maintenance-tool.md)
 - [Home](https://github.com/Onyx-Data/FabOps-Toolkit/blob/main/README.md)
 
 ## References

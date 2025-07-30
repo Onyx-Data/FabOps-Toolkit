@@ -19,9 +19,9 @@ This regular housekeeping ensures a **healthy SQL Endpoint environment**, and mi
 
 ## **How to Install:**
 
-Please follow the [setup instructions](https://github.com/Onyx-Data/FabOps-Toolkit/blob/main/docs/Setup) to install the tool and its dependencies.
+Please follow the [setup instructions](https://github.com/Onyx-Data/FabOps-Toolkit/blob/main/docs/Setup.md) to install the tool and its dependencies.
 
-This will also install the **Lakehouse Maintenance Report**, a Power BI report used to visualize and analyze the metadata and performance data collected by this tool.
+This will also install the **Lakehouse Maintenance Report**, a Power BI report used to visualize and analyse the metadata and performance data collected by this tool.
 
 ---
 
@@ -117,6 +117,6 @@ We strongly recommend to schedule the refresh of the semantic model
 
 ## **See Also**
 
-- [Discover more about this tool](https://github.com/Onyx-Data/FabOps-Toolkit/blob/main/docs/Onyx-Tools/lakehouse-maintenance)
+- [Discover more about this tool](https://github.com/Onyx-Data/FabOps-Toolkit/blob/main/docs/Onyx-Tools/lakehouse-maintenance.md)
 - [Home](https://github.com/Onyx-Data/FabOps-Toolkit/blob/main/README.md)
 

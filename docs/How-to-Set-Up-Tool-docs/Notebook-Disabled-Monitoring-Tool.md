@@ -24,6 +24,6 @@ See below:
 
 ## **See Also**
 
-- [Discover more about this tool](https://github.com/Onyx-Data/FabOps-Toolkit/blob/main/docs/Onyx-Tools/disabled-notebook-alert)
+- [Discover more about this tool](https://github.com/Onyx-Data/FabOps-Toolkit/blob/main/docs/Onyx-Tools/disabled-notebook-alert.md)
 - [Home](https://github.com/Onyx-Data/FabOps-Toolkit/blob/main/README.md)
 

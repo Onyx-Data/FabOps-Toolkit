@@ -46,8 +46,8 @@ If you are experiencing issues with SQL Endpoint freshness due to high file coun
 
 ## See Also
 
-- [Setup the tools](https://github.com/Onyx-Data/FabOps-Toolkit/blob/main/docs/Setup)
-- [Configure SQL Endpoint Refresh Tool](https://github.com/Onyx-Data/FabOps-Toolkit/blob/main/docs/How-to-Set-Up-Tool-docs/SQL-Endpoint-Refresh-Tool)
+- [Setup the tools](https://github.com/Onyx-Data/FabOps-Toolkit/blob/main/docs/Setup.md)
+- [Configure SQL Endpoint Refresh Tool](https://github.com/Onyx-Data/FabOps-Toolkit/blob/main/docs/How-to-Set-Up-Tool-docs/SQL-Endpoint-Refresh-Tool.md)
 - [Home](https://github.com/Onyx-Data/FabOps-Toolkit/blob/main/README.md)
 
 

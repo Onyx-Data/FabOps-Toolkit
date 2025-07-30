@@ -45,6 +45,6 @@ This notebook can be used as a standalone tool for Lakehouse maintenance or inte
 
 ## **See Also**
 
-- [Discover more about this tool](https://github.com/Onyx-Data/FabOps-Toolkit/blob/main/docs/Onyx-Tools/shortcut-identification)
+- [Discover more about this tool](https://github.com/Onyx-Data/FabOps-Toolkit/blob/main/docs/Onyx-Tools/shortcut-identification.md)
 - [Home](https://github.com/Onyx-Data/FabOps-Toolkit/blob/main/README.md)
 
