@@ -1,9 +1,3 @@
-## **What it is:**
-This tool adds slowly changing dimensions (DWStart_Date, DWEnd_Date, Row_Sha2) to dataframe(s) and also track changes to dimensional records. 
-
-## **How to install:**
-Import the notebook to your environment.
-
 ## **How to use it:**
 The user defined functions - _**addSCDFields**_ in the notebook can be called from data ingesting notebook with **_%RUN_** that allows sharing of the user defined functions in the ingesting notebooks. 
 

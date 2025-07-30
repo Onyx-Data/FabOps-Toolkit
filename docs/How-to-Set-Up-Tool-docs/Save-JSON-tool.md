@@ -1,9 +1,3 @@
-## **What it is:**
-This tool adds helps to keep audit trail of data ingestion. It takes a snapshot of the data being ingested at a particular ingestion cycle and save as JSON file in the file area of the lakehouse. This tool is a notebook [[NB - Save JSON - Power BI](https://app.powerbi.com/groups/99d86726-bf0e-47a4-ba2c-b882679df8f1/synapsenotebooks/79e836a6-9fdb-4e17-92c6-455b0462c8f2?experience=power-bi)]
-
-## **How to install:**
-Import the notebook to your environment.
-
 ## **How to use it:**
 Run the notebook with mssparkutils and pass the necessary arguments from inside the ingesting notebook.
 
