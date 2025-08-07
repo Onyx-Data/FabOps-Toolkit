@@ -1,0 +1,31 @@
+name: Create Release with ZIP
+
+on:
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: 'Tag for the release (e.g., v1.0.0)'
+        required: true
+
+jobs:
+  create-release:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Verify zip file exists
+        run: |
+          if [ ! -f ./output/myfile.zip ]; then
+            echo "? Zip file not found at ./output/myfile.zip"
+            exit 1
+          fi
+
+      - name: Create GitHub Release
+        uses: softprops/action-gh-release@v1
+        with:
+          tag_name: ${{ github.event.inputs.tag }}
+          name: "Release ${{ github.event.inputs.tag }}"
+          files: ./output/myfile.zip
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

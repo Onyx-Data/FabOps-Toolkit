@@ -18,17 +18,34 @@ Follow the instructions in the official Microsoft documentation to install Power
 
 > ⚠️ Be sure to choose the **MSI** installer for Windows and run the installer as **Administrator**.
 
+### ✅ Python 3.10.0
+
+These tools require **Python 3.10.0** to be installed. 
+
+
+👉 [Python 3.10.0 installer on Windows](https://www.python.org/ftp/python/3.10.0/python-3.10.0-amd64.exe)
+
+> ⚠️ Be sure to follow these configurations:
+>
+> - Customize the installation
+> - Install for all Users
+> - Add Python to environment variables
+>
+> ![python01.png](/.attachments/python01-fe77be9e-05ab-412c-9d10-232983d2fe2f.png)
+>
+> ![python02.png](/.attachments/python02-66f8ba58-f834-431c-87b9-87207e4c82d7.png)
+
 ---
 
 ## 📦 Downloading the Tools
 
 Go to the GitHub Releases page and download the latest version of `setup.zip`.
 
-![Step 1 : ](https://github.com/Onyx-Data/FabOps-Toolkit/docs/images/release01.png)
+![Step 1 : ](/docs/images/release01.png)
 
-![Step 2 : ](https://github.com/Onyx-Data/FabOps-Toolkit/docs/images/release02.png)
+![Step 2 : ](/docs/images/release02.png)
 
-![Step 3 : ](https://github.com/Onyx-Data/FabOps-Toolkit/docs/images/release03.png)
+![Step 3 : ](/docs/images/release03.png)
 
 After downloading:
 
@@ -69,4 +86,3 @@ Once setup completes, you can start using the tools. Each tool includes its own 
 ---
 
 If you run into any problems, please check the Issues section on GitHub or open a new one for support.
-
