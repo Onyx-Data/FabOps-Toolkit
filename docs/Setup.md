@@ -31,9 +31,9 @@ These tools require **Python 3.10.0** to be installed.
 > - Install for all Users
 > - Add Python to environment variables
 >
-> ![python01.png](/.attachments/python01-fe77be9e-05ab-412c-9d10-232983d2fe2f.png)
+> ![python01.png](https://github.com/Onyx-Data/FabOps-Toolkit/blob/main/docs/images/python01-fe77be9e-05ab-412c-9d10-232983d2fe2f.png)
 >
-> ![python02.png](/.attachments/python02-66f8ba58-f834-431c-87b9-87207e4c82d7.png)
+> ![python02.png](https://github.com/Onyx-Data/FabOps-Toolkit/blob/main/docs/images/python02-66f8ba58-f834-431c-87b9-87207e4c82d7.png)
 
 ---
 
