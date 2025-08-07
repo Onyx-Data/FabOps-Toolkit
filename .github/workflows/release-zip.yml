@@ -16,7 +16,7 @@ jobs:
 
       - name: Verify zip file exists
         run: |
-          if [ ! -f /Binaries/Setup.zip ]; then
+          if [ ! -f Binaries/Setup.zip ]; then
             echo "? Zip file not found at ./output/myfile.zip"
             exit 1
           fi
