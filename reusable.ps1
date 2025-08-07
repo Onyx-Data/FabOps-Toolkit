@@ -367,6 +367,11 @@ function Convert-FixedWidthTableToObjects {
         # Remove empty or whitespace-only lines
         $lines = $lines | Where-Object { $_.Trim() -ne "" }
 
+        # Return empty object list silently if there is no data
+        if ($lines.Count -eq 0) {
+            return @()
+        }
+
         # Validate input: expect at least 3 lines (header, separator, and at least one row)
         if ($lines.Count -lt 3) {
             Write-Host "Expected tabular output with at least 3 lines (header, separator, data). Received: $lines"

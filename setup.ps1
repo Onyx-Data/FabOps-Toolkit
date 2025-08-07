@@ -171,7 +171,7 @@ $wksToolsId=Get-WorkspaceId -workspaceName "OnyxTools"
 #}
 
 if (-not (Check-FabricNotebookExists -WorkspaceName "/OnyxTools.Workspace" -NotebookName "NB - Sync LH and Endpoint")) {
-    Import-SQLEndpointNotebook
+    fab import "/OnyxTools.Workspace/NB - Sync LH and Endpoint.Notebook" -i "$PSScriptRoot\NB - Sync LH and Endpoint.Notebook" -f
 }
 
 if (-not (Check-FabricNotebookExists -WorkspaceName "/OnyxTools.Workspace" -NotebookName "NB - Load Configuration")) {
