@@ -287,38 +287,36 @@ function Get-WorkspaceId {
     return $result
 }
 
-function Get-CapacityRegion()
-{
+function Get-FirstActiveCapacity {
     $result = fab ls .capacities -l | Convert-FixedWidthTableToObjects
 
     if ($result.Count -eq 0) {
         Write-Host "No capacities found"
         exit
     }
-    $filtered = $result | Where-Object { $_.name -notlike "*Reserved*" }
-    $first=$filtered[0]
 
+    # Apply common filters
+    $filtered = $result | Where-Object {
+        $_.name -notlike "*Reserved*" -and
+        $_.state -like "Active*"
+    }
 
-    $capacityregion=$first.region
-    return $capacityregion
+    if ($filtered.Count -eq 0) {
+        Write-Host "No active capacities found"
+        exit
+    }
 
+    return $filtered[0]
 }
 
-function Get-CapacityName()
-{
-    $result = fab ls .capacities -l | Convert-FixedWidthTableToObjects
+function Get-CapacityRegion {
+    $first = Get-FirstActiveCapacity
+    return $first.region
+}
 
-    if ($result.Count -eq 0) {
-        Write-Host "No capacities found"
-        exit
-    }
-    $filtered = $result | Where-Object { $_.name -notlike "*Reserved*" }
-    $first=$filtered[0]
-
-
-    $capacityname=$first.name + ".capacity"
-    return $capacityname
-
+function Get-CapacityName {
+    $first = Get-FirstActiveCapacity
+    return "$($first.name).capacity"
 }
 
 #Basic retrieval functions

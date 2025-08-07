@@ -142,9 +142,6 @@ $wksToolsId=Get-WorkspaceId -workspaceName "OnyxTools"
 
 #Creating tables in the meta lakehouse
 
-if (-not (Check-FabricNotebookExists -WorkspaceName "OnyxTools.Workspace" -NotebookName "NB - Sync LH and Endpoint")) {
-    Import-SQLEndpointNotebook
-}
 
 #if (-not (Check-ItemExists -itemPath "OnyxTools" -itemName "SQL Endpoint System"))
 #{
@@ -172,6 +169,10 @@ if (-not (Check-FabricNotebookExists -WorkspaceName "OnyxTools.Workspace" -Noteb
 #{
 #    Create-Folder -WorkspaceName "OnyxTools"  -folderName "Disabled Notebook System"
 #}
+
+if (-not (Check-FabricNotebookExists -WorkspaceName "/OnyxTools.Workspace" -NotebookName "NB - Sync LH and Endpoint")) {
+    Import-SQLEndpointNotebook
+}
 
 if (-not (Check-FabricNotebookExists -WorkspaceName "/OnyxTools.Workspace" -NotebookName "NB - Load Configuration")) {
     fab import "/OnyxTools.Workspace/NB - Load Configuration.Notebook" -i "$PSScriptRoot\NB - Load Configuration.Notebook" -f
