@@ -20,13 +20,13 @@ This tool takes a smarter approach:
 - The notebook uses Fabric API to check if the schedule of monitored notebooks are enabled
 - An alert message is prepared and set by email if there are schedules disabled
 
-![architecture](https://github.com/Onyx-Data/FabOps-Toolkit/docs/images/notebookDisabledSystem.png)
+![architecture](https://github.com/Onyx-Data/FabOps-Toolkit/blob/main/docs/images/notebookDisabledSystem.png)
 
 ## See Also
 
-- [Setup the tools](https://github.com/Onyx-Data/FabOps-Toolkit/docs/Setup)
-- [Configure Notebook Disabled Monitoring Tool](https://github.com/Onyx-Data/FabOps-Toolkit/docs/How-to-Set-Up-Tool-docs/Notebook-Disabled-Monitoring-Tool)
-- [Home](https://github.com/Onyx-Data/FabOps-Toolkit/README.md)
+- [Setup the tools](https://github.com/Onyx-Data/FabOps-Toolkit/blob/main/docs/Setup.md)
+- [Configure Notebook Disabled Monitoring Tool](https://github.com/Onyx-Data/FabOps-Toolkit/blob/main/docs/How-to-Set-Up-Tool-docs/Notebook-Disabled-Monitoring-Tool.md)
+- [Home](https://github.com/Onyx-Data/FabOps-Toolkit/blob/main/README.md)
 ## When to use it
 
 - Deploy this tool to monitor production notebooks with schedules.

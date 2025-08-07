@@ -28,13 +28,13 @@ It enables:
 
 The image of the ingested data is saved in the files area of the lakehouse. The tool uses the structure below.
 
-![architecture](https://github.com/Onyx-Data/FabOps-Toolkit/docs/images/savejson.png)
+![architecture](https://github.com/Onyx-Data/FabOps-Toolkit/blob/main/docs/images/savejson.png)
 
 ## See Also
 
-- [Setup the tools](https://github.com/Onyx-Data/FabOps-Toolkit/docs/Setup)
-- [Configure Save JSON tool](https://github.com/Onyx-Data/FabOps-Toolkit/docs/How-to-Set-Up-Tool-docs/Save-JSON-tool)
-- [Home](https://github.com/Onyx-Data/FabOps-Toolkit/README.md)
+- [Setup the tools](https://github.com/Onyx-Data/FabOps-Toolkit/blob/main/docs/Setup.md)
+- [Configure Save JSON tool](https://github.com/Onyx-Data/FabOps-Toolkit/blob/main/docs/How-to-Set-Up-Tool-docs/Save-JSON-tool.md)
+- [Home](https://github.com/Onyx-Data/FabOps-Toolkit/blob/main/README.md)
 
 ## References
 
