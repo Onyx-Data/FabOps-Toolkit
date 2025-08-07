@@ -26,6 +26,6 @@ jobs:
         with:
           tag_name: ${{ github.event.inputs.tag }}
           name: "Release ${{ github.event.inputs.tag }}"
-          files: ./output/myfile.zip
+          files: ./Binaries/Setup.zip
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
