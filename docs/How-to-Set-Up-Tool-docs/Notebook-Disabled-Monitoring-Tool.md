@@ -1,9 +1,9 @@
 ## **How to use:** 
 To use this tool,
-- Edit the notebook, add the workspaces the notebooks are located and also add list of critical notebooks to be monitored.
+- Edit the notebook, add the list of the notebooks to be monitored, with their workspaces.
 
 See Below: 
-- ![image.png](https://github.com/Onyx-Data/FabOps-Toolkit/blob/main/docs/images/image-0b8166c2-807c-44cc-b417-3cf9380a0fd0.png)
+- ![image.png](https://github.com/Onyx-Data/FabOps-Toolkit/blob/main/docs/images/image-2ea7fa7f-e79e-461a-9647-a57c8b4458df.png)
 
 - Edit the pipeline, select the outlook activity, go to settings tab, sign in the outlook activity, allow access and add email(s) to be notified, 
 
